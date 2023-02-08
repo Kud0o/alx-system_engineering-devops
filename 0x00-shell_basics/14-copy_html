@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -rv --ignore-existing *.html ../
+find . -name "*.html" -exec bash -c '[ ! -f "$(dirname "$(dirname "{}")")/$(basename "{}")" ] || [ "{}" -nt "$(dirname "$(dirname "{}")")/$(basename "{}")" ] && cat "{}" | tee "$(dirname "$(dirname "{}")")/$(basename "{}")"' 
