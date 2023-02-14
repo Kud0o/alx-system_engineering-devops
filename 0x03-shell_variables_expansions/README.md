@@ -1,0 +1,2 @@
+pwd printing current directory
+
